@@ -1,0 +1,8 @@
+[
+  {
+  "output": [ "DP-2", "DP-3" ],
+    "include": [
+      "~/.config/waybar/dpcfg.json",
+    ],
+  }
+]

@@ -1,0 +1,8 @@
+@define-color main-bg rgba(111, 111, 21, 1);
+@define-color main-border rgb(207, 197, 63);
+@define-color main-text rgb(207, 197, 63);
+@define-color main-text-secondary rgb(130, 130, 30);
+
+@define-color main-bg-red rgba(111, 21, 21, 1);
+@define-color main-border-red rgb(207, 63, 63);
+@define-color main-text-red rgb(207, 63, 63);

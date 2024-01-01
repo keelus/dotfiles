@@ -1,0 +1,154 @@
+{
+	"margin": "10 10 0 10",
+	"layer": "top",
+	"height": 30,
+	"spacing": 0,
+	"modules-left": ["hyprland/workspaces", "group/first"],
+	"modules-center": ["clock"],
+	"modules-right": ["group/second", "group/third", "group/fourth", "group/fifth"],	
+	"group/first":{
+		"orientation": "horizontal",
+		"modules": [
+			"custom/spotify",
+			"custom/spotify-progress"
+		]
+	},
+	"group/second":{
+		"orientation": "horizontal",
+		"modules": [
+			"tray",
+		]
+	},
+	"group/third":{
+		"orientation": "horizontal",
+		"modules": [
+			"wireplumber",
+			"keyboard-state",
+			"hyprland/language",
+			"network"
+		]
+	},
+	"group/fourth":{
+		"orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"memory",
+			"temperature",
+		]
+	},
+	"group/fifth":{
+		"orientation": "horizontal",
+		"modules": [
+			"custom/poweroff",
+		]
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"all-outputs": true,
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+		},
+		"format-icons": {
+			"1":"一",
+			"2":"二",
+			"3":"三",
+			"4":"四",
+			"5":"五",
+			"6":"六",
+			"7":"七",
+			"8":" 八",
+			"9":"九",
+		}
+	},
+	"custom/spotify": {
+		"interval": 1,
+		"format":"{icon}{}",
+		"format-icons": {
+			"playing": "<span rise='1pt'>󰏤</span>",
+			"paused": "<span rise='1pt'>󰐊</span>",
+			"stopped": "<span font='15'></span>"
+		},
+		"return-type": "json",
+		"exec": "$HOME/.config/waybar/scripts/spotify",
+		"on-click": "spotify"
+	},
+	"custom/spotify-progress": {
+		"interval": 1,
+		"format":"{icon}",
+		"return-type": "json",
+		"exec": "$HOME/.config/waybar/scripts/spotify",
+		"format-icons": [
+			"<span color='#cfc53f'>-</span>---------",
+			"<span color='#cfc53f'>--</span>--------",
+			"<span color='#cfc53f'>---</span>-------",
+			"<span color='#cfc53f'>----</span>------",
+			"<span color='#cfc53f'>-----</span>-----",
+			"<span color='#cfc53f'>------</span>----",
+			"<span color='#cfc53f'>-------</span>---",
+			"<span color='#cfc53f'>--------</span>--",
+			"<span color='#cfc53f'>---------</span>-",
+			"<span color='#cfc53f'>----------</span>",
+		]
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}",
+		"format":"<span>{:%H:%M - %b %d}</span>"
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 10
+	},
+	"wireplumber": {
+		"format": "<span font='15' rise='-2pt'>󰕾</span> {volume}%",
+		"format-muted": "<span font='10'></span>",
+		"on-click": "pavucontrol"
+	},
+	"keyboard-state": {
+		"numlock": false,
+		"capslock": true,
+		"format": "<span font='20' rise='-3pt'>{icon}</span>",
+		"format-icons": {
+			"locked": "󰬶",
+			"unlocked": "󰬵"
+		}
+	},
+	"hyprland/language": {
+		"format":"{}",
+		"format-en": "EN",
+		"format-es": "ES"
+	},
+	"network": {
+		"format-ethernet": "󰲝",
+		"format-disconnected": "󰲜",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"cpu": {
+		"format": "<span font='15' rise='-2pt'></span> {usage}%",
+		"on-click": "kitty btop"
+	},
+	"memory": {
+		"format": " {}%",
+		"on-click": "kitty btop"
+	},
+	"temperature": {
+		"critical-threshold": 60,
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["<span font='8'>󱃃</span>", "<span font='8'>󰔏</span>", "<span font='13'>󰈸</span>"],
+		"on-click": "kitty btop"
+	},
+	"custom/poweroff": {
+		"format": "⏻",
+		"on-click": "poweroff"
+	}
+
+}
