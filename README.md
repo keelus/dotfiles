@@ -10,7 +10,7 @@
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
   - Theme: Brogrammer
   - Font: Fira Code Mono
-- Shell: [Fish[(https://fishshell.com/)
+- Shell: [Fish](https://fishshell.com/)
 - File explorer: Dolphin
 - App launcher: [Fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Greeter: [greetd](https://wiki.archlinux.org/title/Greetd), [tuigreet](https://github.com/apognu/tuigreet)
