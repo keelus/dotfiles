@@ -11,7 +11,7 @@
   - Theme: Brogrammer
   - Font: Fira Code Mono
 - Shell: [Fish](https://fishshell.com/)
-- File explorer: Dolphin
+- File explorer: Nemo
 - App launcher: [Fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Greeter: [greetd](https://wiki.archlinux.org/title/Greetd), [tuigreet](https://github.com/apognu/tuigreet)
 - Virtual terminal color scheme: base16-twilight.hex (use [base16-vtrgb](https://github.com/coderonline/base16-vtrgb))
