@@ -10,10 +10,9 @@ vim.cmd('set shiftwidth=4')
 
 -- Tab and end of line symbols
 vim.cmd('set list')
-vim.cmd('set listchars=tab:.\\ ,eol:¬,trail:⋅')
+vim.cmd('set listchars=tab:›\\ ,eol:¬,trail:⋅')
 
 -- Set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
+
 vim.cmd('set relativenumber')
-
-

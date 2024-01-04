@@ -54,5 +54,8 @@ return require('packer').startup(function(use)
 	use { 'ray-x/lsp_signature.nvim' }
 	use { 'numToStr/Comment.nvim' }
 	use { 'lukas-reineke/indent-blankline.nvim' }
+	use { 'folke/tokyonight.nvim' }
+	use { 'catppuccin/nvim' }
+	use { 'ray-x/lsp_signature.nvim' }
 end)
 

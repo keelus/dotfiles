@@ -34,3 +34,30 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+-- Paste without losing clipboard
+vim.keymap.set("x", "<leader>p", "\"_dP")
+-- Delete without losing clipboard
+vim.keymap.set({"n","v"}, "<leader>d", "\"_d")
+
+vim.keymap.set("n", "<C-Tab>", vim.lsp.buf.hover)
+
+
+-- Disable arrows, home, end, pgup and pgdown keys, to gain muscle memory
+vim.keymap.set({"", "!"}, '<Up>', '<Nop>')
+vim.keymap.set({"", "!"}, '<Down>', '<Nop>')
+vim.keymap.set({"", "!"}, '<Left>', '<Nop>')
+vim.keymap.set({"", "!"}, '<Right>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-Up>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-Down>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-Left>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-Right>', '<Nop>')
+vim.keymap.set({"", "!"}, '<PageUp>', '<Nop>')
+vim.keymap.set({"", "!"}, '<PageDown>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-PageUp>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-PageDown>', '<Nop>')
+vim.keymap.set({"", "!"}, '<Home>', '<Nop>')
+vim.keymap.set({"", "!"}, '<End>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-Home>', '<Nop>')
+vim.keymap.set({"", "!"}, '<C-End>', '<Nop>')
+vim.keymap.set({"", "!"}, '<S-Home>', '<Nop>')
+vim.keymap.set({"", "!"}, '<S-End>', '<Nop>')
