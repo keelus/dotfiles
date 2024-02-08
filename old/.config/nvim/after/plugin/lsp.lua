@@ -37,12 +37,6 @@ require("lspconfig").gopls.setup{
 	},
 }
 
-require("lspconfig").clangd.setup{
-	on_attach = on_attach,
-	capabilities = capabilities,
-	cmd = { 'clangd' }
-}
-
 -- Remove imported and unused libraries (code from "https://github.com/neovim/nvim-lspconfig/issues/115#issuecomment-1801096383")
 local golang_organize_imports = function(bufnr, isPreflight)
 	local params = vim.lsp.util.make_range_params(nil, vim.lsp.util._get_offset_encoding(bufnr))

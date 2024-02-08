@@ -1,10 +1,9 @@
-# keelus' DOTFILES (x11)
-(most of the files are not added yet)
+# keelus' old DOTFILES (Wayland)
 
 ## Information
 - OS: Arch Linux
-- WM: [i3](https://i3wm.org/)
-- Top bar: [Polybar](https://github.com/polybar/polybar)
+- WM: [Hyprland](https://hyprland.org/)
+- Top bar: [Waybar](https://github.com/Alexays/Waybar)
 - Text editor: Neovim
   - Theme: PaperColor 
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
@@ -12,11 +11,12 @@
   - Font: Fira Code Mono
 - Shell: [Fish](https://fishshell.com/)
 - File explorer: Nemo
-- App launcher: [Rofi](https://github.com/davatorium/rofi)
+- App launcher: [Fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Greeter: [greetd](https://wiki.archlinux.org/title/Greetd), [tuigreet](https://github.com/apognu/tuigreet)
 - Virtual terminal color scheme: base16-twilight.hex (use [base16-vtrgb](https://github.com/coderonline/base16-vtrgb))
-- Fonts: Fira Code Mono
+- Screenshot tool: [swappy](https://github.com/jtheoof/swappy) (with [grim](https://sr.ht/~emersion/grim/))
+- Fonts: Fira Code Mono, Noto Sans CJK JP
 - Audio: [Pipewire](https://wiki.archlinux.org/title/PipeWire) & [pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
 
 ## Preview
-WIP
+<img src="./.git-img/preview.png" />
