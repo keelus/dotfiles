@@ -1,0 +1,26 @@
+@define-color main-bg rgba(111, 111, 21, 1);
+@define-color main-border rgb(207, 197, 63);
+@define-color main-text rgb(207, 197, 63);
+@define-color main-text-secondary rgb(130, 130, 30);
+
+@define-color main-bg-red rgba(111, 21, 21, 1);
+@define-color main-border-red rgb(207, 63, 63);
+@define-color main-text-red rgb(207, 63, 63);
+
+/* New colors */
+@define-color background #000;
+@define-color background-alt #32302f;
+@define-color foreground #FFF;
+
+@define-color black #282828;
+@define-color red #fe7a93;
+@define-color green #98971a;
+@define-color orange #d79921;
+@define-color yellow #d7c521;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #a89984;
+@define-color lightblue #79a1f6;
+@define-color lightgreen #8a964d;
+@define-color gray #323641;

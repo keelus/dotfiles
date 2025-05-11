@@ -1,0 +1,126 @@
+// -*- mode: jsonc -*-
+{
+	"height": 45,
+	"spacing": 4,
+	"modules-left": [
+		"custom/logo",
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"temperature",
+		"tray",
+		"pulseaudio",
+		"network",
+		"hyprland/language",
+		"custom/power"
+	],
+	"hyprland/workspaces": {
+		"all-outputs": true,
+		"active-only": false,
+		"show-special": true,
+		"persistent-workspaces": {
+			"*": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+		}
+	},
+	"tray": {
+		"icon-size": 25,
+		"spacing": 10
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"cpu": {
+		"format": " {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": " {}%"
+	},
+	"temperature": {
+		"critical-threshold": 80,
+		"format": " {icon} {temperatureC}°C",
+		"format-icons": ["", "", ""]
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-full": "{capacity}% {icon}",
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"battery#bat2": {
+		"bat": "BAT2"
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
+	"network": {
+		"format-wifi": " {essid} [{ipaddr}]", 
+		"format-ethernet": "󰲝",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "󰖁 Muted",
+		"format-source": "",
+		"format-source-muted": "",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/power": {
+		"format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"suspend": "systemctl suspend",
+			"reboot": "reboot",
+			"shutdown": "shutdown now"
+		}
+	},
+	"custom/spotify": {
+		"interval": 1,
+		"format":"{icon}{0}",
+		"format-icons": {
+			"playing": "<span rise='1pt'>󰏤</span>",
+			"paused": "<span rise='1pt'>󰐊</span>",
+			"stopped": "<span font='15'></span>"
+		},
+		"return-type": "json",
+		"exec": "$HOME/.config/waybar/scripts/spotify",
+		"on-click": "spotify-launcher"
+	},
+	"hyprland/language": {
+		"format":"{}",
+		"format-en": "EN",
+		"format-es": "ES"
+	},
+	"custom/logo": {
+		"format": "",
+		"interval": "once",
+		"tooltip": false
+	}
+}

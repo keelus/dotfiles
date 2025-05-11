@@ -1,0 +1,154 @@
+@import "./colors.css";
+
+* {
+	font-size: 15px;
+	font-family: "TX02 Nerd Font Mono";
+	font-weight:600;
+}
+
+
+window#waybar {
+	background-color: @background;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+
+#tray, #language, #network,
+#cpu, #memory, #temperature {
+	border-right:none;
+}
+
+
+#workspaces {
+	border-radius: 2px;
+}
+#workspaces button {
+	color: @foreground;
+	border-radius: 0;
+}
+
+#workspaces button.urgent {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#workspaces button.active {
+	color:@lightblue;
+}
+
+#workspaces button:hover {
+	background: transparent;
+	border-color: transparent;
+}
+
+#network.disconnected {
+	color: @main-text-red;
+}
+
+#third {}
+#cpu {}
+#memory {}
+#temperature {}
+#temperature.critical {
+	background-color: @main-bg-red;
+	color: @main-text-red;
+}
+
+
+#custom-poweroff {
+	font-size:18px;
+}
+
+
+#clock, #second, #third, #fourth, #fifth {
+	color: @lightblue;
+}
+
+#cpu, #memory, #temperature, 
+#pulseaudio, #network, #language, #tray {
+	color: @foreground;
+}
+
+#language {
+	padding: 0;
+}
+
+
+#language, #pulseaudio, #network {
+	font-size:20px;
+}
+#pulseaudio.muted {
+	color: @red;
+}
+
+#custom-separator {
+	color: @background-alt;
+}
+
+#custom-power {
+	font-size:25px;
+	color: #000;
+	padding-right: 0;
+	padding-left:15px;
+	background-color: #FFF;
+}
+
+#custom-logo {
+	font-size:40px;
+	color: #000;
+	padding-right: 15px;
+	padding-left:15px;
+	background-color: #FFF;
+}
+
+#clock {
+	background-color: white;
+	padding: 0 30px;
+	color: #000;
+	font-size:25px;
+}
+
+#cpu, #memory, #temperature #pulseaudio, #network, #language, #custom-power {
+	margin: 0 10px;
+}
+
+language {
+	margin-left: 0;
+}
+
+#cpu, #memory, #temperature {
+	font-size: 20px;
+}
+
+#temperature {
+	margin-right: 20px;
+}
+
+#workspaces button.active.hosting-monitor {
+	border-bottom: 3px solid #000;
+	border-top: 3px solid #000;
+}
+
+#workspaces button * {
+	font-size: 20px;
+}
+
+#workspaces button.active.hosting-monitor > * > * {
+	font-size: 25px;
+}
+
+#workspaces button.visible {
+	background-color: #FFF;
+	color: #000;
+}
+
+#workspaces button.visible:not(.hosting-monitor) {
+	opacity: .5;
+}
+
+#workspaces button.empty {
+	opacity: .3;
+}
