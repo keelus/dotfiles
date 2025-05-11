@@ -68,7 +68,7 @@ window#waybar.hidden {
 }
 
 #cpu, #memory, #temperature, 
-#pulseaudio, #network, #language, #tray {
+#pulseaudio, #network, #language, #tray, #battery {
 	color: @foreground;
 }
 
@@ -111,7 +111,7 @@ window#waybar.hidden {
 	font-size:25px;
 }
 
-#cpu, #memory, #temperature #pulseaudio, #network, #language, #custom-power {
+#cpu, #memory, #temperature #pulseaudio, #network, #language, #custom-power, #battery {
 	margin: 0 10px;
 }
 
@@ -119,7 +119,7 @@ language {
 	margin-left: 0;
 }
 
-#cpu, #memory, #temperature {
+#cpu, #memory, #temperature, #battery {
 	font-size: 20px;
 }
 

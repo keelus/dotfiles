@@ -15,6 +15,7 @@
 		"temperature",
 		"tray",
 		"pulseaudio",
+		"battery",
 		"network",
 		"hyprland/language",
 		"custom/power"
@@ -52,7 +53,7 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{capacity}% {icon}",
+		"format": "{icon} {capacity}%",
 		"format-full": "{capacity}% {icon}",
 		"format-charging": "{capacity}% ",
 		"format-plugged": "{capacity}% ",
