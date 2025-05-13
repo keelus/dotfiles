@@ -8,5 +8,6 @@
 		./hyprland.nix
 		./hyprpaper.nix
 		./fuzzel.nix
+		./r.nix
 	];
 }

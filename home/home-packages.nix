@@ -13,8 +13,6 @@
 		obsidian
 		spotify
 
-		rstudio
-
 		inotify-tools
 		neofetch
 
