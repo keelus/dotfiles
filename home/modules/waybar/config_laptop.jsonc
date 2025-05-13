@@ -1,6 +1,5 @@
 // -*- mode: jsonc -*-
 {
-	"height": 45,
 	"spacing": 4,
 	"modules-left": [
 		"custom/logo",
@@ -10,6 +9,7 @@
 		"clock"
 	],
 	"modules-right": [
+		"backlight",
 		"cpu",
 		"memory",
 		"temperature",
@@ -20,6 +20,10 @@
 		"hyprland/language",
 		"custom/power"
 	],
+	"backlight": {
+		"format": "{percent}% {icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""]
+	},
 	"hyprland/workspaces": {
 		"all-outputs": true,
 		"active-only": false,

@@ -7,5 +7,6 @@
 		./gtk.nix
 		./hyprland.nix
 		./hyprpaper.nix
+		./fuzzel.nix
 	];
 }

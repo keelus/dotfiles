@@ -5,11 +5,15 @@
 		gh
 
 		waybar
-		fuzzel
 
 		pavucontrol
 
 		discord
+		firefox
+		obsidian
+		spotify
+
+		rstudio
 
 		inotify-tools
 		neofetch
@@ -17,5 +21,16 @@
 		grim
 		slurp
 		wl-clipboard
+
+		playerctl
+		brightnessctl
+
+		networkmanagerapplet
+
+		python311
+		nodejs_24
+		libgcc
+
+		fd
 	];
 }

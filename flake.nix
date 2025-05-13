@@ -9,21 +9,30 @@
 			ref = "nixos-unstable";
 		};
 
+		sops-nix = {
+			type = "github";
+			owner = "Mic92";
+			repo = "sops-nix";
+		};
+
 		home-manager = {
 			type = "github";
 			owner = "nix-community";
 			repo = "home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }:
+	outputs = { self, nixpkgs, home-manager, ... }@inputs:
 		{
 			nixosConfigurations = {
 				pc = nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
+					specialArgs = { inherit inputs; };
 					modules = [
 						./configuration.nix
+						./hardware-configuration-pc.nix
 						home-manager.nixosModules.home-manager
 						{
 							home-manager.extraSpecialArgs = {
@@ -35,8 +44,10 @@
 
 				laptop = nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
+					specialArgs = { inherit inputs; };
 					modules = [
 						./configuration.nix
+						./hardware-configuration-laptop.nix
 						home-manager.nixosModules.home-manager
 						{
 							home-manager.extraSpecialArgs = {

@@ -4,13 +4,13 @@
 
 # This is a test.
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	imports =
-		[ # Include the results of the hardware scan.
-			./hardware-configuration.nix
+		[
 			./home-configuration.nix
+			inputs.sops-nix.nixosModules.sops
 		];
 
 	# Bootloader.
@@ -33,7 +33,6 @@
 	#  networks."Hugo's iPhone".psk = "hugopass";
 	#  extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
 	#};
-	networking.networkmanager.enable = true;
 
 	# Set your time zone.
 	time.timeZone = "Europe/Madrid";
@@ -76,6 +75,7 @@
 	environment.systemPackages = with pkgs; [
 		vim
 		hyprpaper
+		sops
 
 		vulkan-tools
 		vulkan-loader
@@ -129,11 +129,148 @@
 		pulse.enable = true;
 	};
 
-	hardware.graphics = {
-		enable = true;
-		enable32Bit = true;
-	};
-	boot.kernelModules = ["amdgpu"];
-	services.xserver.videoDrivers = [ "amdgpu" ];
+	# hardware.graphics = {
+	# 	enable = true;
+	# 	enable32Bit = true;
+	# };
+	# boot.kernelModules = ["amdgpu"];
+	# 125000services.xserver.videoDrivers = [ "amdgpu" ];
 
+	# hardware.opengl = {
+	# 	enable = true;
+	# 	extraPackages = with pkgs; [
+	# 		vpl-gpu-rt
+	# 	];
+	# };
+
+	hardware = {
+		opengl.enable = true;
+		opengl.driSupport32Bit = true;
+
+		opengl.extraPackages = with pkgs; [
+			intel-media-driver
+			vaapiVdpau
+			libvdpau-va-gl
+		];
+	};
+
+	sops = {
+		defaultSopsFile = ./secrets/secrets.yaml;
+		defaultSopsFormat = "yaml";
+
+		age.keyFile = "/home/keelus/.config/sops/age/keys.txt";
+
+		secrets = {
+			"wifi/home/ssid" = { };
+			"wifi/home/psk" = { };
+			"wifi/phone/ssid" = { };
+			"wifi/phone/psk" = { };
+			"wifi/uni/ssid" = { };
+			"wifi/uni/psk" = { };
+			"wifi/uni/mail" = { };
+		};
+	};
+
+	networking.networkmanager = {
+		enable = true;
+
+		ensureProfiles = {
+			environmentFiles = [
+				config.sops.secrets."wifi/home/ssid".path
+				config.sops.secrets."wifi/home/psk".path
+				config.sops.secrets."wifi/phone/ssid".path
+				config.sops.secrets."wifi/phone/psk".path
+				config.sops.secrets."wifi/uni/ssid".path
+				config.sops.secrets."wifi/uni/psk".path
+				config.sops.secrets."wifi/uni/mail".path
+			];
+
+			profiles = {
+				Phone = {
+					connection = {
+						id = "Phone";
+						type = "wifi";
+					};
+
+					wifi = {
+						ssid = "$PHONE_SSID";
+					};
+
+					wifi-security = {
+						auth-alg = "open";
+						key-mgmt = "wpa-psk";
+						psk = "$PHONE_PSK";
+					};
+
+					ipv4 = {
+						method = "auto";
+					};
+					ipv6 = {
+						method = "auto";
+					};
+				};
+
+				Home = {
+					connection = {
+						id = "Home";
+						type = "wifi";
+					};
+
+					wifi = {
+						ssid = "$HOME_SSID";
+					};
+
+					wifi-security = {
+						auth-alg = "open";
+						key-mgmt = "wpa-psk";
+						psk = "$HOME_PSK";
+					};
+
+					ipv4 = {
+						method = "auto";
+					};
+					ipv6 = {
+						method = "auto";
+					};
+				};
+
+				Eduroam = {
+					connection = {
+						id = "Eduroam";
+						type = "wifi";
+					};
+
+					wifi = {
+						ssid = "$UNI_SSID";
+					};
+
+					wifi-security = {
+						auth-alg = "open";
+						key-mgmt = "wpa-eap";
+					};
+
+					"802-1x" = {
+						anonymous-identity="anonymous.cat.20170711@opendeusto.es";
+						eap = "peap";
+						ca-cert="/home/keelus/Desktop/ca.pem";
+						identity="$UNI_MAIL";
+						password="$UNI_PSK";
+						phase2-auth="mschapv2";
+					};
+
+					ipv4 = {
+						method = "auto";
+					};
+					ipv6 = {
+						method = "auto";
+					};
+				};
+			};
+		};
+	};
+
+	services.mysql = {
+		enable = true;
+		package = pkgs.mariadb;
+	};
 }
