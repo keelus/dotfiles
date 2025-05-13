@@ -124,9 +124,6 @@ language {
 	margin-left: 0;
 }
 
-#cpu, #memory, #temperature, #battery {
-}
-
 #temperature {
 	margin-right: 20px;
 }
