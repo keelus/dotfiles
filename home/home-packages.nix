@@ -25,10 +25,22 @@
 
 		networkmanagerapplet
 
+		cargo
+		rustc
+		rustfmt
+		rust-analyzer
+		clippy
+
+		go
 		python311
 		nodejs_24
 		libgcc
+		bun
+		gcc
+
+		jetbrains.idea-ultimate
 
 		fd
+		ripgrep
 	];
 }

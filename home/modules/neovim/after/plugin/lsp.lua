@@ -111,3 +111,19 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		update_in_insert = true,
 	}
 )
+
++require("lspconfig").rust_analyzer.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = { "rust-analyzer" },
+	root_dir = require("lspconfig").util.root_pattern("Cargo.toml", "rust-project.json"),
+	filetypes = { "rust" },
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
+			checkOnSave = true,
+		}
+	}
+
