@@ -112,7 +112,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	}
 )
 
-+require("lspconfig").rust_analyzer.setup {
+require("lspconfig").rust_analyzer.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "rust-analyzer" },
@@ -126,4 +126,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 			checkOnSave = true,
 		}
 	}
-
+}

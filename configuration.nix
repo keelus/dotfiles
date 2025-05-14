@@ -14,10 +14,16 @@
 		];
 
 	# Bootloader.
-	boot.loader.systemd-boot.enable = true;
+	boot.loader.systemd-boot.enable = false;
 	boot.loader.efi.canTouchEfiVariables = true;
 	hardware.enableAllFirmware = true;
 	boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.loader.grub = {
+		enable = true;
+		version = 2;
+		efiSupport = true;
+		devices = [ "nodev" ];
+	};
 
 	networking.hostName = "nixos"; # Define your hostname.
 
