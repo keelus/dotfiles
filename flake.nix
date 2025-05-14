@@ -34,8 +34,9 @@
 						machine = "pc";
 					};
 					modules = [
-						./configuration.nix
-						./hardware-configuration-pc.nix
+						./machine/shared/default.nix
+						./machine/pc/default.nix
+						./home-configuration.nix
 						home-manager.nixosModules.home-manager
 						{
 							home-manager.extraSpecialArgs = {
@@ -52,8 +53,9 @@
 						machine = "laptop";
 					};
 					modules = [
-						./configuration.nix
-						./hardware-configuration-laptop.nix
+						./machine/shared/default.nix
+						./machine/laptop/default.nix
+						./home-configuration.nix
 						home-manager.nixosModules.home-manager
 						{
 							home-manager.extraSpecialArgs = {
