@@ -29,7 +29,10 @@
 			nixosConfigurations = {
 				pc = nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
-					specialArgs = { inherit inputs; };
+					specialArgs = {
+						inherit inputs;
+						machine = "pc";
+					};
 					modules = [
 						./configuration.nix
 						./hardware-configuration-pc.nix
@@ -44,7 +47,10 @@
 
 				laptop = nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
-					specialArgs = { inherit inputs; };
+					specialArgs = {
+						inherit inputs;
+						machine = "laptop";
+					};
 					modules = [
 						./configuration.nix
 						./hardware-configuration-laptop.nix

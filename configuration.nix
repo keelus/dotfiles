@@ -4,7 +4,7 @@
 
 # This is a test.
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, machine, ... }:
 {
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	imports =
@@ -20,19 +20,6 @@
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	networking.hostName = "nixos"; # Define your hostname.
-	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-	# Configure network proxy if necessary
-	# networking.proxy.default = "http://user:password@proxy:port/";
-	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-	# Enable networking
-	# networking.networkmanager.enable = true;
-	#networking.wireless = {
-	#  enable = true;
-	#  networks."Hugo's iPhone".psk = "hugopass";
-	#  extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
-	#};
 
 	# Set your time zone.
 	time.timeZone = "Europe/Madrid";
@@ -106,12 +93,6 @@
 	# Enable the OpenSSH daemon.
 	# services.openssh.enable = true;
 
-	# Open ports in the firewall.
-	# networking.firewall.allowedTCPPorts = [ ... ];
-	# networking.firewall.allowedUDPPorts = [ ... ];
-	# Or disable the firewall altogether.
-	# networking.firewall.enable = false;
-
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions
 	# on your system were taken. It‘s perfectly fine and recommended to leave
@@ -174,7 +155,7 @@
 	networking.networkmanager = {
 		enable = true;
 
-		ensureProfiles = {
+		ensureProfiles = if machine == "laptop" then {
 			environmentFiles = [
 				config.sops.secrets."wifi/home/ssid".path
 				config.sops.secrets."wifi/home/psk".path
@@ -266,11 +247,21 @@
 					};
 				};
 			};
-		};
+		} else {};
 	};
 
 	services.mysql = {
 		enable = true;
 		package = pkgs.mariadb;
+	};
+
+	networking.firewall.allowedTCPPorts = [ 22 ];
+	services.openssh = {
+		enable = true;
+		ports = [ 22 ];
+		settings = {
+			PasswordAuthentication = true;
+			AllowUsers = [ "keelus" ];
+		};
 	};
 }
