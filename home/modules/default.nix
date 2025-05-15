@@ -9,5 +9,6 @@
 		./hyprpaper.nix
 		./fuzzel.nix
 		./r.nix
+		./dunst.nix
 	];
 }

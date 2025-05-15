@@ -6,6 +6,7 @@ let
 		caret
 		gridExtra
 		kableExtra
+		rpart_plot
 	];
 
 	r = pkgs.rWrapper.override{
