@@ -127,3 +127,5 @@ require("lspconfig").rust_analyzer.setup {
 		}
 	}
 }
+
+vim.diagnostic.config({ virtual_text = true })
