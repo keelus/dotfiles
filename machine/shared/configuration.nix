@@ -1,4 +1,9 @@
 { config, pkgs, inputs, machine, ... }:
+let pkgsUnstable = import inputs.nixpkgs {
+	system  = "x86_64-linux";
+	config.allowUnfree = true;
+};
+in
 {
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	# Bootloader.
@@ -59,6 +64,10 @@
 
 		vulkan-tools
 		vulkan-loader
+
+		(pkgsUnstable.ciscoPacketTracer8.override {
+			packetTracerSource = /home/keelus/Documents/CiscoPacketTracer822_amd64_signed.deb;
+		})
 	];
 
 	services.greetd = {

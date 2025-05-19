@@ -37,8 +37,15 @@
 		libgcc
 		bun
 		gcc
+		gnumake
+		cmake
+
+		docker_28
 
 		jetbrains.idea-ultimate
+
+		dbeaver-bin
+		ciscoPacketTracer8
 
 		fd
 		ripgrep

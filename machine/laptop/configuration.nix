@@ -106,7 +106,7 @@
 					"802-1x" = {
 						anonymous-identity="anonymous.cat.20170711@opendeusto.es";
 						eap = "peap";
-						ca-cert="/home/keelus/Desktop/ca.pem";
+						ca-cert="/etc/ssl/certs/eduroam/ca.pem";
 						identity="$UNI_MAIL";
 						password="$UNI_PSK";
 						phase2-auth="mschapv2";
