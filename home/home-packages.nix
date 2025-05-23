@@ -43,6 +43,7 @@
 		docker_28
 
 		jetbrains.idea-ultimate
+		android-studio
 
 		dbeaver-bin
 		ciscoPacketTracer8
