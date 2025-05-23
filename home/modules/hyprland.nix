@@ -4,7 +4,7 @@ let
 			monitor=DP-1, 2560x1440@180.00, 1920x0, 1
 			monitor=DP-2, 1920x1080@143.85, 0x0, 1
 	'' else ''
-			monitor=eDP-1, 2880x18000@90.00, 0x0, 1.5
+			monitor=eDP-1, 2880x1800@90.00, 0x0, 1.5
 		'';
 
 	keyboardName = if machine == "pc" then 
