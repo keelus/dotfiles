@@ -48,7 +48,7 @@ in
 	users.users.keelus = {
 		isNormalUser = true;
 		description = "keelus";
-		extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" ];
+		extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" "dialout" ];
 		packages = with pkgs; [];
 	};
 
@@ -102,7 +102,7 @@ in
 		package = pkgs.mariadb;
 	};
 
-	networking.firewall.allowedTCPPorts = [ 22 ];
+	networking.firewall.allowedTCPPorts = [ 22 8081 ];
 	services.openssh = {
 		enable = true;
 		ports = [ 22 ];

@@ -7,6 +7,7 @@
 		waybar
 
 		pavucontrol
+		nemo
 
 		discord
 		firefox
@@ -47,6 +48,11 @@
 
 		dbeaver-bin
 		ciscoPacketTracer8
+
+		libsForQt5.xdg-desktop-portal-kde
+		libreoffice-fresh
+
+		arduino-ide
 
 		fd
 		ripgrep
