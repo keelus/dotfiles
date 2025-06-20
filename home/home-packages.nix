@@ -54,7 +54,6 @@
 		android-studio
 
 		dbeaver-bin
-		ciscoPacketTracer8
 
 		libsForQt5.xdg-desktop-portal-kde
 		libreoffice-fresh

@@ -66,10 +66,6 @@ in
 
 		vulkan-tools
 		vulkan-loader
-
-		(pkgsUnstable.ciscoPacketTracer8.override {
-			packetTracerSource = /home/keelus/Documents/CiscoPacketTracer822_amd64_signed.deb;
-		})
 	];
 
 	services.greetd = {
