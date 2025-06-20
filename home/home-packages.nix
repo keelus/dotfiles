@@ -32,14 +32,21 @@
 		rust-analyzer
 		clippy
 
+		basedpyright
+
 		go
 		python311
 		nodejs_24
-		libgcc
 		bun
+
 		gcc
+		libgcc
 		gnumake
 		cmake
+		clang-tools
+		libcxx
+
+		SDL2
 
 		docker_28
 
@@ -56,5 +63,9 @@
 
 		fd
 		ripgrep
+		zip
+		unzip
+		screen
+		btop
 	];
 }

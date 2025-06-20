@@ -128,4 +128,11 @@ require("lspconfig").rust_analyzer.setup {
 	}
 }
 
+require("lspconfig").basedpyright.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = { "basedpyright-langserver", "--stdio" },
+	filetypes = { "python" },
+}
+
 vim.diagnostic.config({ virtual_text = true })

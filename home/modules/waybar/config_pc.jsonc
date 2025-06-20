@@ -45,6 +45,7 @@
 	"temperature": {
 		"critical-threshold": 80,
 		"format": " {icon} {temperatureC}°C",
+		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"format-icons": ["", "", ""]
 	},
 	"battery": {
