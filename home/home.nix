@@ -23,6 +23,7 @@
 			nrs-laptop = "sudo nixos-rebuild switch --flake ~/.nix#laptop";
 		};
 		initExtra = ''
+			eval "$(direnv hook bash)"
 			PS1='\[\e[1m\][\u@\h\[\e[0m\] at \[\e[3m\]\w\[\e[0;1m\]]\\$\[\e[0m\] '
 		'';
 	};

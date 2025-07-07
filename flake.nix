@@ -13,6 +13,7 @@
 			type = "github";
 			owner = "Mic92";
 			repo = "sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		home-manager = {
@@ -20,11 +21,10 @@
 			owner = "nix-community";
 			repo = "home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
-			inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, ... } @ inputs:
 		{
 			nixosConfigurations = {
 				pc = nixpkgs.lib.nixosSystem {

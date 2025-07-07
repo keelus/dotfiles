@@ -2,7 +2,7 @@
 {
 	imports = [
 		./ghostty.nix
-		./neovim.nix
+		./nvim.nix
 		./waybar.nix
 		./gtk.nix
 		./hyprland.nix
@@ -10,5 +10,7 @@
 		./fuzzel.nix
 		./r.nix
 		./dunst.nix
+		./vscode.nix
+		./direnv.nix
 	];
 }
