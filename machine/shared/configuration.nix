@@ -66,6 +66,9 @@ in
 
 		vulkan-tools
 		vulkan-loader
+
+		linuxPackages.kernel
+		linuxPackages.kernel.dev
 	];
 
 	services.greetd = {

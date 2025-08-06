@@ -30,14 +30,19 @@ return {
                     else
                         fallback()
                     end
-                end, { "i", "s" })
+                end, { "i", "s" }),
+                ['<C-Space>'] = cmp.mapping.complete()
             },
             preselect = "item",
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "path" }
-            }
+            sources = cmp.config.sources({
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+            }, {
+                { name = 'buffer' },
+                { name = 'path' },
+                { name = 'nvim_lua' },
+            }),
+
         }
     end
 }

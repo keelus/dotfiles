@@ -12,5 +12,6 @@
 		./dunst.nix
 		./vscode.nix
 		./direnv.nix
+		./alejandra.nix
 	];
 }

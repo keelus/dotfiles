@@ -34,6 +34,7 @@
 						machine = "pc";
 					};
 					modules = [
+						./overlays.nix
 						./machine/shared/default.nix
 						./machine/pc/default.nix
 						./home-configuration.nix

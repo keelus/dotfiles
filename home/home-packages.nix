@@ -32,12 +32,16 @@
 		rust-analyzer
 		clippy
 
+		typescript-language-server
+
 		basedpyright
 
 		go
 		python311
 		nodejs_24
 		bun
+
+		lua-language-server
 
 		gcc
 		libgcc
