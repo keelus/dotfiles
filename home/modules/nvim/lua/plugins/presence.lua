@@ -1,4 +1,4 @@
 return {
-    "andweeb/presence.nvim",
-    opts = {},
+	"andweeb/presence.nvim",
+	opts = {},
 }

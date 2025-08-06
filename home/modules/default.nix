@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{...}: {
 	imports = [
 		./ghostty.nix
 		./nvim.nix

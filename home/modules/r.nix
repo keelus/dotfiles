@@ -1,5 +1,4 @@
-{ config, pkgs, ...} :
-let
+{pkgs, ...}: let
 	rPackages = with pkgs.rPackages; [
 		lattice
 		ggplot2
@@ -9,13 +8,15 @@ let
 		rpart_plot
 	];
 
-	r = pkgs.rWrapper.override{
-		packages = rPackages;
-	};
+	r =
+		pkgs.rWrapper.override {
+			packages = rPackages;
+		};
 
-	rstudio = pkgs.rstudioWrapper.override{
-		packages = rPackages;
-	};
+	rstudio =
+		pkgs.rstudioWrapper.override {
+			packages = rPackages;
+		};
 in {
 	home.packages = [
 		r

@@ -1,4 +1,4 @@
 return {
-    "folke/lsp-colors.nvim",
-    opts = {}
+	"folke/lsp-colors.nvim",
+	opts = {},
 }

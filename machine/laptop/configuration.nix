@@ -1,10 +1,13 @@
-{ config, pkgs, inputs, machine, ... }:
 {
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-	imports =
-		[
-			inputs.sops-nix.nixosModules.sops
-		];
+	config,
+	pkgs,
+	inputs,
+	...
+}: {
+	nix.settings.experimental-features = ["nix-command" "flakes"];
+	imports = [
+		inputs.sops-nix.nixosModules.sops
+	];
 
 	environment.systemPackages = with pkgs; [
 		sops
@@ -17,13 +20,13 @@
 		age.keyFile = "/home/keelus/.config/sops/age/keys.txt";
 
 		secrets = {
-			"wifi/home/ssid" = { };
-			"wifi/home/psk" = { };
-			"wifi/phone/ssid" = { };
-			"wifi/phone/psk" = { };
-			"wifi/uni/ssid" = { };
-			"wifi/uni/psk" = { };
-			"wifi/uni/mail" = { };
+			"wifi/home/ssid" = {};
+			"wifi/home/psk" = {};
+			"wifi/phone/ssid" = {};
+			"wifi/phone/psk" = {};
+			"wifi/uni/ssid" = {};
+			"wifi/uni/psk" = {};
+			"wifi/uni/mail" = {};
 		};
 	};
 
@@ -104,12 +107,12 @@
 					};
 
 					"802-1x" = {
-						anonymous-identity="anonymous.cat.20170711@opendeusto.es";
+						anonymous-identity = "anonymous.cat.20170711@opendeusto.es";
 						eap = "peap";
-						ca-cert="/etc/ssl/certs/eduroam/ca.pem";
-						identity="$UNI_MAIL";
-						password="$UNI_PSK";
-						phase2-auth="mschapv2";
+						ca-cert = "/etc/ssl/certs/eduroam/ca.pem";
+						identity = "$UNI_MAIL";
+						password = "$UNI_PSK";
+						phase2-auth = "mschapv2";
 					};
 
 					ipv4 = {

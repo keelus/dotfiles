@@ -1,10 +1,13 @@
-{ config, pkgs, machine, ... }: {
+{machine, ...}: {
 	services.dunst = {
 		enable = true;
 
 		settings = {
 			global = {
-				monitor = if machine == "PC" then "DP-1" else "e-DP1";
+				monitor =
+					if machine == "PC"
+					then "DP-1"
+					else "e-DP1";
 
 				follow = "none";
 				origin = "top-center";

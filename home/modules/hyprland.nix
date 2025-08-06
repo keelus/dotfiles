@@ -1,17 +1,19 @@
-{ config, pkgs, machine, lib, ... }:
-let
-	monitorConfig = if machine == "pc" then ''
+{machine, ...}: let
+	monitorConfig =
+		if machine == "pc"
+		then ''
 			monitor=DP-1, 2560x1440@180.00, 1920x0, 1
 			monitor=DP-2, 1920x1080@143.85, 0x0, 1
-	'' else ''
+		''
+		else ''
 			monitor=eDP-1, 2880x1800@90.00, 0x0, 1.5
 		'';
 
-	keyboardName = if machine == "pc" then 
-		"keychron-keychron-v10"
-	else "at-translated-set-2-keyboard";
-in
-{
+	keyboardName =
+		if machine == "pc"
+		then "keychron-keychron-v10"
+		else "at-translated-set-2-keyboard";
+in {
 	wayland.windowManager.hyprland = {
 		enable = true;
 		xwayland.enable = true;
@@ -84,7 +86,7 @@ in
 
 			input = {
 				kb_layout = "us,es";
-				kb_options = [ "grp:alt_space_toggle" ];
+				kb_options = ["grp:alt_space_toggle"];
 
 				follow_mouse = 1;
 
@@ -100,7 +102,7 @@ in
 				sensitivity = -0.5;
 			};
 
-			bind =  [
+			bind = [
 				"$mainMod, return, exec, $terminal"
 				"$mainMod, Q, killactive,"
 				"$mainMod, M, exit,"
@@ -124,7 +126,6 @@ in
 				"$mainMod, P, exec, hyprctl switchxkblayout ${keyboardName} 0"
 
 				"$mainMod, R, submap, resizing"
-
 
 				"$mainMod, 1, workspace, 1"
 				"$mainMod, 2, workspace, 2"
@@ -222,15 +223,15 @@ in
 		};
 
 		extraConfig = ''
-				${monitorConfig}
+			${monitorConfig}
 
-				submap = resizing
-				binde = , l, resizeactive, 30 0
-				binde = , h, resizeactive, -30 0
-				binde = , k, resizeactive, 0 -30
-				binde = , j, resizeactive, 0 30
-				bind = , escape, submap, reset
-				submap = reset
-			'';
+			submap = resizing
+			binde = , l, resizeactive, 30 0
+			binde = , h, resizeactive, -30 0
+			binde = , k, resizeactive, 0 -30
+			binde = , j, resizeactive, 0 30
+			bind = , escape, submap, reset
+			submap = reset
+		'';
 	};
 }

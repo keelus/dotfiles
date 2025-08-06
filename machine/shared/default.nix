@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{...}: {
 	imports = [
 		./configuration.nix
 	];

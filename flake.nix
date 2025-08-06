@@ -24,10 +24,14 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... } @ inputs:
-		{
-			nixosConfigurations = {
-				pc = nixpkgs.lib.nixosSystem {
+	outputs = {
+		nixpkgs,
+		home-manager,
+		...
+	} @ inputs: {
+		nixosConfigurations = {
+			pc =
+				nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
 					specialArgs = {
 						inherit inputs;
@@ -47,7 +51,8 @@
 					];
 				};
 
-				laptop = nixpkgs.lib.nixosSystem {
+			laptop =
+				nixpkgs.lib.nixosSystem {
 					system = "x86_64-linux";
 					specialArgs = {
 						inherit inputs;
@@ -65,6 +70,6 @@
 						}
 					];
 				};
-			};
 		};
+	};
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{...}: {
 	boot.loader.grub = {
 		extraEntries = ''
 			menuentry "Windows [main]" {

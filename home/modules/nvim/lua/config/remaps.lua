@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 
 -- Copy to system clipboard (xclip)
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- Movement between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")

@@ -1,11 +1,5 @@
-{ config, pkgs, inputs, machine, ... }:
-let pkgsUnstable = import inputs.nixpkgs {
-	system  = "x86_64-linux";
-	config.allowUnfree = true;
-};
-in
-{
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+{pkgs, ...}: {
+	nix.settings.experimental-features = ["nix-command" "flakes"];
 	# Bootloader.
 	boot.loader.systemd-boot.enable = false;
 	boot.loader.efi.canTouchEfiVariables = true;
@@ -15,7 +9,7 @@ in
 		enable = true;
 		version = 2;
 		efiSupport = true;
-		devices = [ "nodev" ];
+		devices = ["nodev"];
 	};
 
 	networking.hostName = "nixos"; # Define your hostname.
@@ -48,7 +42,7 @@ in
 	users.users.keelus = {
 		isNormalUser = true;
 		description = "keelus";
-		extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" "dialout" ];
+		extraGroups = ["networkmanager" "wheel" "docker" "adbusers" "dialout"];
 		packages = with pkgs; [];
 	};
 
@@ -81,8 +75,6 @@ in
 		};
 	};
 
-
-
 	system.stateVersion = "24.11";
 
 	services.pulseaudio.enable = false;
@@ -101,13 +93,13 @@ in
 		package = pkgs.mariadb;
 	};
 
-	networking.firewall.allowedTCPPorts = [ 22 8081 ];
+	networking.firewall.allowedTCPPorts = [22 8081];
 	services.openssh = {
 		enable = true;
-		ports = [ 22 ];
+		ports = [22];
 		settings = {
 			PasswordAuthentication = true;
-			AllowUsers = [ "keelus" ];
+			AllowUsers = ["keelus"];
 		};
 	};
 

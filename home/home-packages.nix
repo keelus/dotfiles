@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{pkgs, ...}: {
 	home.packages = with pkgs; [
 		bat
 		git
@@ -70,5 +70,10 @@
 		unzip
 		screen
 		btop
+
+		alejandra
+		nixd
+
+		stylua
 	];
 }
