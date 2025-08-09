@@ -71,6 +71,8 @@
 		screen
 		btop
 
+		prismlauncher
+
 		alejandra
 		nixd
 

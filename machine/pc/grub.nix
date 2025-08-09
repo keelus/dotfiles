@@ -4,15 +4,8 @@
 			menuentry "Windows [main]" {
 				insmod part_gpt
 				insmod fat
-				set root=(hd2,gpt1)
-				chainloader /EFI/WindowsA/Boot/bootmgfw.efi
-			}
-
-			menuentry "Windows [extra]" {
-				insmod part_gpt
-				insmod fat
-				set root=(hd2,gpt1)
-				chainloader /EFI/WindowsB/Boot/bootmgfw.efi
+				search --no-floppy --fs-uuid --set=root 83CD-374C
+				chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 			}
 		'';
 		gfxmodeEfi = "2560x1440";
