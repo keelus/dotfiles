@@ -60,7 +60,7 @@
 		vulkan-loader
 
 		linuxPackages.kernel
-		linuxPackages.kernel.devd
+		linuxPackages.kernel.dev
 
 		man-pages
 		man-pages-posix
