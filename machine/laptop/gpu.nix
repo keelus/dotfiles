@@ -1,11 +1,11 @@
 {pkgs, ...}: {
-	hardware = {
-		opengl.enable = true;
-		opengl.driSupport32Bit = true;
+	hardware.graphics = {
+		enable = true;
+		enable32Bit = true;
 
-		opengl.extraPackages = with pkgs; [
+		extraPackages = with pkgs; [
 			intel-media-driver
-			vaapiVdpau
+			libva-vdpau-driver
 			libvdpau-va-gl
 		];
 	};

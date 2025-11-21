@@ -116,7 +116,7 @@ return {
 			vim.lsp.config("tsserver", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+				filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
 				cmd = { "typescript-language-server", "--stdio" },
 			})
 

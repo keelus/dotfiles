@@ -7,7 +7,6 @@
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 	boot.loader.grub = {
 		enable = true;
-		version = 2;
 		efiSupport = true;
 		devices = ["nodev"];
 	};
@@ -55,25 +54,25 @@
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
-		vim
 		hyprpaper
 
 		vulkan-tools
 		vulkan-loader
 
 		linuxPackages.kernel
-		linuxPackages.kernel.dev
+		linuxPackages.kernel.devd
 
 		man-pages
 		man-pages-posix
 	];
+	environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
 	documentation.dev.enable = true;
 
 	services.greetd = {
 		enable = true;
 		settings = {
 			default_session = {
-				command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+				command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
 				user = "keelus";
 			};
 		};
@@ -97,7 +96,7 @@
 		package = pkgs.mariadb;
 	};
 
-	networking.firewall.allowedTCPPorts = [22 8081 25565];
+	networking.firewall.allowedTCPPorts = [22];
 	services.openssh = {
 		enable = true;
 		ports = [22];

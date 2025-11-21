@@ -37,7 +37,7 @@
 		basedpyright
 
 		go
-		python311
+		python314
 		nodejs_24
 		bun
 
@@ -59,8 +59,10 @@
 
 		dbeaver-bin
 
-		libsForQt5.xdg-desktop-portal-kde
 		libreoffice-fresh
+		hunspell
+		hunspellDicts.en_US
+		hunspellDicts.es_ES
 
 		arduino-ide
 
@@ -77,5 +79,8 @@
 		nixd
 
 		stylua
+
+		parted
+		wget
 	];
 }
