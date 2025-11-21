@@ -33,10 +33,12 @@
 		clippy
 
 		typescript-language-server
+		vscode-langservers-extracted
 
 		basedpyright
 
 		go
+		gopls
 		python314
 		nodejs_24
 		bun
@@ -82,5 +84,7 @@
 
 		parted
 		wget
+
+		vlc
 	];
 }
