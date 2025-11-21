@@ -1,10 +1,1 @@
-[Security]
-EAP-Method=PEAP
-EAP-Identity=anonymous@opendeusto.es
-EAP-PEAP-Phase2-Method=MSCHAPV2
-EAP-PEAP-Phase2-Identity=
-EAP-PEAP-Phase2-Password=
-
-[Settings]
-AutoConnect=true
-
+/home/keelus/eduroam.8021x
