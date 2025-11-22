@@ -1,50 +1,69 @@
 // -*- mode: jsonc -*-
 {
-	"spacing": 4,
+	"position": "left",
+	"width": 60,
+	"spacing": 0,
+	"margin-top": 5,
+	"margin-left": 5,
+	"margin-bottom": 5,
 	"modules-left": [
 		"custom/logo",
 		"hyprland/workspaces"
 	],
 	"modules-center": [
-		"clock"
+		"custom/clockHour",
+		"custom/clockSeparator",
+		"custom/clockMin"
 	],
 	"modules-right": [
-		"backlight",
 		"cpu",
 		"memory",
 		"temperature",
-		"tray",
+		// "tray",
 		"pulseaudio",
 		"battery",
 		"network",
 		"hyprland/language",
 		"custom/power"
 	],
-	"backlight": {
-		"format": "{percent}% {icon}",
-		"format-icons": ["", "", "", "", "", "", "", "", ""]
+	"custom/logo": {
+		"format": "",
+		"interval": "once",
+		"tooltip": false
 	},
 	"hyprland/workspaces": {
 		"all-outputs": true,
-		"active-only": false,
 		"show-special": true,
-		"persistent-workspaces": {
-			"*": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+		"format": "{icon}",
+		"format-icons": {
+			"1": "Ⅰ",
+			"2": "Ⅱ",
+			"3": "Ⅲ",
+			"4": "Ⅳ",
+			"5": "Ⅴ",
+			"6": "Ⅵ",
+			"7": "Ⅶ",
+			"8": "Ⅷ",
+			"9": "Ⅸ",
+			"10": "Ⅹ"
 		}
 	},
-	"tray": {
-		"icon-size": 25,
-		"spacing": 10
+	"custom/clockHour": {
+		"interval": 60,
+		"format": "{0}",
+		"exec": "date +\"%H\"",
+		"return-type": "text"
 	},
-	"clock": {
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "{:%Y-%m-%d}"
+	"custom/clockSeparator": {
+		"format": "··"
+	},
+	"custom/clockMin": {
+		"interval": 60,
+		"format": "{0}",
+		"exec": "date +\"%M\"",
+		"return-type": "text"
 	},
 	"cpu": {
-		"states": {
-			"warning": 60,
-			"critical": 85
-		},
 		"format": " {usage}%",
 		"tooltip": false
 	},
@@ -52,9 +71,9 @@
 		"format": " {}%"
 	},
 	"temperature": {
-		"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
 		"critical-threshold": 80,
-		"format": " {icon} {temperatureC}°C",
+		"format": " {icon} {temperatureC}°",
+		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"format-icons": ["", "", ""]
 	},
 	"battery": {
@@ -62,10 +81,10 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
+		"format": "{icon} {capacity}%",
+		"format-full": "{icon}{capacity}%",
+		"format-charging": "{capacity}%",
+		"format-plugged": "{capacity}%",
 		"format-alt": "{time} {icon}",
 		"format-icons": ["", "", "", "", ""]
 	},
@@ -83,16 +102,10 @@
 			"power-saver": ""
 		}
 	},
-	"network": {
-		"format-wifi": " {essid} [{ipaddr}]", 
-		"format-ethernet": "󰲝",
-		"tooltip-format": "{ifname} via {gwaddr} ",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected ⚠"
-	},
 	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-muted": "󰖁 Muted",
+		// "format": "{icon} {volume}%",
+		"format": "{icon}",
+		"format-muted": "󰖁",
 		"format-source": "",
 		"format-source-muted": "",
 		"format-icons": {
@@ -100,8 +113,20 @@
 		},
 		"on-click": "pavucontrol"
 	},
+	"network": {
+		"format-wifi": "",
+		"format-ethernet": "󰲝",
+		"tooltip-format": "{ifname} via {gwaddr}  ({essid})",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠"
+	},
+	"hyprland/language": {
+		"format":"{}",
+		"format-en": "EN",
+		"format-es": "ES"
+	},
 	"custom/power": {
-		"format" : "⏻ ",
+		"format" : "⏻",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml",
@@ -110,27 +135,5 @@
 			"reboot": "reboot",
 			"shutdown": "shutdown now"
 		}
-	},
-	"custom/spotify": {
-		"interval": 1,
-		"format":"{icon}{0}",
-		"format-icons": {
-			"playing": "<span rise='1pt'>󰏤</span>",
-			"paused": "<span rise='1pt'>󰐊</span>",
-			"stopped": "<span font='15'></span>"
-		},
-		"return-type": "json",
-		"exec": "$HOME/.config/waybar/scripts/spotify",
-		"on-click": "spotify-launcher"
-	},
-	"hyprland/language": {
-		"format":"{}",
-		"format-en": "EN",
-		"format-es": "ES"
-	},
-	"custom/logo": {
-		"format": "",
-		"interval": "once",
-		"tooltip": false
 	}
 }

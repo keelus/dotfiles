@@ -80,10 +80,10 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
+		"format": "{icon} {capacity}%",
+		"format-full": "{icon}{capacity}%",
+		"format-charging": "{capacity}%",
+		"format-plugged": "{capacity}%",
 		"format-alt": "{time} {icon}",
 		"format-icons": ["", "", "", "", ""]
 	},
@@ -113,9 +113,9 @@
 		"on-click": "pavucontrol"
 	},
 	"network": {
-		"format-wifi": " {essid} [{ipaddr}]",
+		"format-wifi": "",
 		"format-ethernet": "󰲝",
-		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format": "{ifname} via {gwaddr}  ({essid})",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "Disconnected ⚠"
 	},
@@ -136,3 +136,4 @@
 		}
 	}
 }
+

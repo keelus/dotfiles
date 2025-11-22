@@ -19,8 +19,8 @@
 	programs.bash = {
 		enable = true;
 		shellAliases = {
-			nrs-pc = "sudo nixos-rebuild switch --flake ~/.nix#pc";
-			nrs-laptop = "sudo nixos-rebuild switch --flake ~/.nix#laptop";
+			nrs-pc = "sudo nixos-rebuild switch --flake ~/.nix#pc --impure";
+			nrs-laptop = "sudo nixos-rebuild switch --flake ~/.nix#laptop --impure";
 			vi = "nvim";
 			vim = "nvim";
 			neofetch = "neofetch --ascii_colors 3 --colors 3 3 3 3";
