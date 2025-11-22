@@ -86,5 +86,12 @@
 		wget
 
 		vlc
+
+		qt6.qt5compat
+		qt6.qtsvg
+		qt6.qtimageformats
+		qt6.qtmultimedia
+		qt6.qtdeclarative
+		quickshell
 	];
 }

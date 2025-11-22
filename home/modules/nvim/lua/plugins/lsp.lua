@@ -131,6 +131,13 @@ return {
 			vim.lsp.config("nixd", {
 				capabilities = capabilities,
 			})
+
+			vim.lsp.enable("qmlls")
+			vim.lsp.config("qmlls", {
+				capabilities = capabilities,
+				cmd = { "qmlls", "-E" },
+				filetypes = { "qml", "qtquick" },
+			})
 		end,
 	},
 }

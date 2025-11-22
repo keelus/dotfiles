@@ -1,8 +1,8 @@
 {pkgs, ...}: let
 	wallpaperImage =
 		pkgs.fetchurl {
-			url = "https://i.imgur.com/4D0MSU0.jpeg";
-			sha256 = "1q681vvy0asvvi7p3r8q4cjl0sxna5hb7g0jsh1pjfbpm35dgwri";
+			url = "https://i.imgur.com/IOomGtu.jpeg";
+			sha256 = "0s2qn4kmxyiwlk91sncavzprikpb09mygrr3pxddday76qm85lij";
 		};
 in {
 	services.hyprpaper = {

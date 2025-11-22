@@ -21,13 +21,14 @@
 		shellAliases = {
 			nrs-pc = "sudo nixos-rebuild switch --flake ~/.nix#pc";
 			nrs-laptop = "sudo nixos-rebuild switch --flake ~/.nix#laptop";
+			vi = "nvim";
+			vim = "nvim";
+			neofetch = "neofetch --ascii_colors 3 --colors 3 3 3 3";
 		};
 		initExtra = ''
 			eval "$(direnv hook bash)"
 			PS1='\[\e[1m\][\u@\h\[\e[0m\] at \[\e[3m\]\w\[\e[0;1m\]]\\$\[\e[0m\] '
 			export TERM=xterm-256color
-			alias vi='nvim'
-			alias vim='nvim'
 		'';
 	};
 

@@ -39,7 +39,7 @@ in {
 
 				border_size = 2;
 
-				"col.active_border" = "rgba(79a1f6ff)";
+				"col.active_border" = "rgba(be6246ff)";
 				"col.inactive_border" = "rgba(595959ff)";
 
 				resize_on_border = false;
@@ -230,6 +230,9 @@ in {
 			binde = , j, resizeactive, 0 30
 			bind = , escape, submap, reset
 			submap = reset
+
+			blurls = waybar
+			layerrule = blur,waybar
 		'';
 	};
 }
