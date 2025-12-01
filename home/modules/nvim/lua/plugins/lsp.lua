@@ -59,7 +59,7 @@ return {
 					bufmap("n", "K", vim.lsp.buf.hover)
 					bufmap("n", "gl", vim.diagnostic.open_float)
 					bufmap("n", "<leader>rf", vim.lsp.buf.references)
-					bufmap("n", "<leader>r", vim.lsp.buf.rename)
+					bufmap("n", "<leader>rr", vim.lsp.buf.rename)
 					-- bufmap("n", "<leader>vca", vim.lsp.buf.code_action)
 					bufmap("i", "<C-h>", vim.lsp.buf.signature_help)
 					bufmap("i", "<C-Space>", vim.lsp.buf.signature_help)
@@ -137,6 +137,19 @@ return {
 				capabilities = capabilities,
 				cmd = { "qmlls", "-E" },
 				filetypes = { "qml", "qtquick" },
+			})
+
+			vim.lsp.enable("html")
+			vim.lsp.config("html", {
+				capabilities = capabilities,
+				filetypes = { "html" },
+				cmd = { "vscode-html-language-server", "--stdio" },
+			})
+			vim.lsp.enable("css")
+			vim.lsp.config("css", {
+				capabilities = capabilities,
+				filetypes = { "css" },
+				cmd = { "vscode-css-language-server", "--stdio" },
 			})
 		end,
 	},

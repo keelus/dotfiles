@@ -25,6 +25,7 @@ window#waybar.hidden {
 
 #custom-power {
 	background-color: @accent;
+	color: @foreground;
 	border-radius: 5px;
 	margin: 10px;
 	font-size: 20px;
@@ -47,11 +48,13 @@ window#waybar.hidden {
 #workspaces button.visible.hosting-monitor {
 	background-color: @accent;
 	opacity: 1;
+	color: @foreground;
 }
 
 #workspaces button.visible:not(.hosting-monitor) {
 	background-color: @accent;
 	opacity: .5;
+	color: @foreground;
 }
 
 #language {

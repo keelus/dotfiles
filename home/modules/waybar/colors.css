@@ -1,4 +1,5 @@
-@define-color background rgba(0, 0, 0, .8);
-@define-color accent #be6246;
-@define-color accent2 rgba(190, 98, 70, .5);
+@define-color background rgba(26, 27, 38, .95);
+@define-color accent #ffffff;
+@define-color accent2 rgba(255, 255, 255, .5);
+@define-color foreground #000;
 @define-color red #fe7a93;

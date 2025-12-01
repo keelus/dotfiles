@@ -17,6 +17,7 @@ return {
 			nix = { "alejandra", "injected" },
 			rust = { "rustfmt", "injected" },
 			lua = { "stylua", "injected" },
+			c = { "clang-format", "injected" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",

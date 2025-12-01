@@ -51,6 +51,8 @@
 		cmake
 		clang-tools
 		libcxx
+		valgrind
+		bear
 
 		SDL2
 
@@ -82,6 +84,7 @@
 
 		stylua
 
+		file
 		parted
 		wget
 

@@ -23,7 +23,7 @@
 			nrs-laptop = "sudo nixos-rebuild switch --flake ~/.nix#laptop --impure";
 			vi = "nvim";
 			vim = "nvim";
-			neofetch = "neofetch --ascii_colors 3 --colors 3 3 3 3";
+			neofetch = "neofetch --ascii_colors 4 7";
 		};
 		initExtra = ''
 			eval "$(direnv hook bash)"

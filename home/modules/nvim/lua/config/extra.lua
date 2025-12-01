@@ -32,7 +32,8 @@ vim.g.vimtex_view_method = "zathura"
 
 vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 
-vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("melange")
+vim.cmd.colorscheme("tokyonight-night")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
@@ -42,3 +43,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 vim.diagnostic.config({ virtual_text = true })
 vim.cmd("set signcolumn=yes")
+
+-- vim.cmd("highlight String gui=NONE cterm=NONE")
+-- vim.cmd("highlight Comment gui=NONE cterm=NONE")
