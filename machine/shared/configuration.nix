@@ -50,7 +50,6 @@
 
 	# programs.hyprland.enable = true;
 	programs.dconf.enable = true;
-	programs.adb.enable = true;
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
@@ -72,7 +71,7 @@
 		enable = true;
 		settings = {
 			default_session = {
-				command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+				command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
 				user = "keelus";
 			};
 		};

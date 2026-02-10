@@ -8,11 +8,21 @@ in {
 	services.hyprpaper = {
 		enable = true;
 		settings = {
+			splash = false;
 			preload = ["${wallpaperImage}"];
 			wallpaper = [
-				"DP-1,${wallpaperImage}"
-				"DP-2,${wallpaperImage}"
-				"eDP-1,${wallpaperImage}"
+				{
+					monitor = "DP-1";
+					path = "${wallpaperImage}";
+				}
+				{
+					monitor = "DP-2";
+					path = "${wallpaperImage}";
+				}
+				{
+					monitor = "eDP-1";
+					path = "${wallpaperImage}";
+				}
 			];
 		};
 	};

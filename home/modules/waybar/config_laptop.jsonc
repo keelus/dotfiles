@@ -19,7 +19,7 @@
 		"cpu",
 		"memory",
 		"temperature",
-		// "tray",
+		"tray",
 		"pulseaudio",
 		"battery",
 		"network",
@@ -118,7 +118,7 @@
 		"format-ethernet": "󰲝",
 		"tooltip-format": "{ifname} via {gwaddr}  ({essid})",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected ⚠"
+		"format-disconnected": "⚠"
 	},
 	"hyprland/language": {
 		"format":"{}",

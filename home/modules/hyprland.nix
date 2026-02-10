@@ -29,18 +29,13 @@ in {
 			];
 
 			general = {
-				"$mainMod" = "SUPER";
-				"$terminal" = "ghostty";
-				"$fileManager" = "dolphin";
-				"$menu" = "fuzzel";
-
 				gaps_in = 3;
 				gaps_out = 5;
 
 				border_size = 2;
 
-				"col.active_border" = "rgba(ffffffff)";
-				"col.inactive_border" = "rgba(595959ff)";
+				"col.active_border" = "rgba(c0caf5ff)";
+				"col.inactive_border" = "rgba(c0caf57f)";
 
 				resize_on_border = false;
 
@@ -101,62 +96,62 @@ in {
 			};
 
 			bind = [
-				"$mainMod, return, exec, $terminal"
-				"$mainMod, Q, killactive,"
-				"$mainMod, M, exit,"
-				"$mainMod, E, exec, $fileManager"
-				"$mainMod, V, togglefloating,"
-				"$mainMod, space, exec, $menu"
-				"$mainMod,F,fullscreen"
+				"SUPER, return, exec, ghostty"
+				"SUPER, Q, killactive,"
+				"SUPER, M, exit,"
+				"SUPER, E, exec, dolphin"
+				"SUPER, V, togglefloating,"
+				"SUPER, space, exec, fuzzel"
+				"SUPER,F,fullscreen"
 
 				", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
-				"$mainMod, h, movefocus, l"
-				"$mainMod, l, movefocus, r"
-				"$mainMod, k, movefocus, u"
-				"$mainMod, j, movefocus, d"
+				"SUPER, h, movefocus, l"
+				"SUPER, l, movefocus, r"
+				"SUPER, k, movefocus, u"
+				"SUPER, j, movefocus, d"
 
-				"$mainMod shift, h, movewindow, l"
-				"$mainMod shift, l, movewindow, r"
-				"$mainMod shift, k, movewindow, u"
-				"$mainMod shift, j, movewindow, d"
+				"SUPER shift, h, movewindow, l"
+				"SUPER shift, l, movewindow, r"
+				"SUPER shift, k, movewindow, u"
+				"SUPER shift, j, movewindow, d"
 
-				"$mainMod, O, exec, hyprctl switchxkblayout ${keyboardName} 1"
-				"$mainMod, P, exec, hyprctl switchxkblayout ${keyboardName} 0"
+				"SUPER, O, exec, hyprctl switchxkblayout ${keyboardName} 1"
+				"SUPER, P, exec, hyprctl switchxkblayout ${keyboardName} 0"
 
-				"$mainMod, R, submap, resizing"
+				"SUPER, R, submap, resizing"
 
-				"$mainMod, 1, workspace, 1"
-				"$mainMod, 2, workspace, 2"
-				"$mainMod, 3, workspace, 3"
-				"$mainMod, 4, workspace, 4"
-				"$mainMod, 5, workspace, 5"
-				"$mainMod, 6, workspace, 6"
-				"$mainMod, 7, workspace, 7"
-				"$mainMod, 8, workspace, 8"
-				"$mainMod, 9, workspace, 9"
-				"$mainMod, 0, workspace, 10"
+				"SUPER, 1, workspace, 1"
+				"SUPER, 2, workspace, 2"
+				"SUPER, 3, workspace, 3"
+				"SUPER, 4, workspace, 4"
+				"SUPER, 5, workspace, 5"
+				"SUPER, 6, workspace, 6"
+				"SUPER, 7, workspace, 7"
+				"SUPER, 8, workspace, 8"
+				"SUPER, 9, workspace, 9"
+				"SUPER, 0, workspace, 10"
 
-				"$mainMod SHIFT, 1, movetoworkspace, 1"
-				"$mainMod SHIFT, 2, movetoworkspace, 2"
-				"$mainMod SHIFT, 3, movetoworkspace, 3"
-				"$mainMod SHIFT, 4, movetoworkspace, 4"
-				"$mainMod SHIFT, 5, movetoworkspace, 5"
-				"$mainMod SHIFT, 6, movetoworkspace, 6"
-				"$mainMod SHIFT, 7, movetoworkspace, 7"
-				"$mainMod SHIFT, 8, movetoworkspace, 8"
-				"$mainMod SHIFT, 9, movetoworkspace, 9"
-				"$mainMod SHIFT, 0, movetoworkspace, 10"
+				"SUPER SHIFT, 1, movetoworkspace, 1"
+				"SUPER SHIFT, 2, movetoworkspace, 2"
+				"SUPER SHIFT, 3, movetoworkspace, 3"
+				"SUPER SHIFT, 4, movetoworkspace, 4"
+				"SUPER SHIFT, 5, movetoworkspace, 5"
+				"SUPER SHIFT, 6, movetoworkspace, 6"
+				"SUPER SHIFT, 7, movetoworkspace, 7"
+				"SUPER SHIFT, 8, movetoworkspace, 8"
+				"SUPER SHIFT, 9, movetoworkspace, 9"
+				"SUPER SHIFT, 0, movetoworkspace, 10"
 
-				"$mainMod, S, togglespecialworkspace, magic"
-				"$mainMod SHIFT, S, movetoworkspace, special:magic"
+				"SUPER, S, togglespecialworkspace, magic"
+				"SUPER SHIFT, S, movetoworkspace, special:magic"
 
-				"$mainMod, mouse_down, workspace, e+1"
-				"$mainMod, mouse_up, workspace, e-1"
+				"SUPER, mouse_down, workspace, e+1"
+				"SUPER, mouse_up, workspace, e-1"
 			];
 
 			bindm = [
-				"$mainMod, mouse:272, movewindow"
-				"$mainMod, mouse:273, resizewindow"
+				"SUPER, mouse:272, movewindow"
+				"SUPER, mouse:273, resizewindow"
 			];
 
 			bindl = [
@@ -210,14 +205,6 @@ in {
 					"workspacesOut, 1, 1.94, almostLinear, slide"
 				];
 			};
-
-			windowrulev2 = [
-				"suppressevent maximize, class:.*"
-				"nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-			];
-			windowrule = [
-				"float, title:^Open Files$, class:xdg-desktop-portal-gtk"
-			];
 		};
 
 		extraConfig = ''
@@ -232,7 +219,35 @@ in {
 			submap = reset
 
 			blurls = waybar
-			layerrule = blur,waybar
+			layerrule {
+				name = layerrule-1
+				blur = on
+				match:namespace = waybar
+			}
+
+			windowrule {
+				name = windowrule-1
+				float = on
+				match:title = ^Open Files$
+				match:class = xdg-desktop-portal-gtk
+			}
+
+			windowrule {
+				name = windowrule-2
+				suppress_event = maximize
+				match:class = .*
+			}
+
+			windowrule {
+				name = windowrule-3
+				no_focus = on
+				match:class = ^$
+				match:title = ^$
+				match:xwayland = 1
+				match:float = 1
+				match:fullscreen = 0
+				match:pin = 0
+			}
 		'';
 	};
 }

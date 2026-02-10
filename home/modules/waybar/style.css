@@ -32,6 +32,7 @@ window#waybar.hidden {
 }
 
 #custom-clockHour, #custom-clockMin {
+	color: @accent;
 	font-size: 25px;
 }
 
@@ -60,10 +61,12 @@ window#waybar.hidden {
 #language {
 	margin-left: 15px;
 	margin-right: 17px;
+	color: @accent;
 }
 
 #pulseaudio, #network {
 	font-size: 20px;
+	color: @accent;
 }
 
 #pulseaudio.muted {
@@ -72,12 +75,19 @@ window#waybar.hidden {
 
 #network {
 	margin-bottom: 10px;
+	color: @accent;
 }
 
 #cpu, #memory {
 	margin-bottom: 3px;
+	color: @accent;
 }
 
 #temperature {
 	margin-bottom: 10px;
+	color: @accent;
+}
+
+#battery {
+	color: @accent;
 }

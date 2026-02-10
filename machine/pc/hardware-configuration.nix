@@ -9,23 +9,30 @@
 	];
 
 	boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "sd_mod"];
-	boot.initrd.kernelModules = [];
-	boot.kernelModules = ["kvm-amd" "vboxdrv" "vboxnetadp" "vboxnetflt"];
+	boot.initrd.kernelModules = ["usb_storage"];
+	boot.kernelModules = ["kvm-amd"];
 	boot.extraModulePackages = [];
 
-	fileSystems."/" = {
-		device = "/dev/disk/by-uuid/527cfca7-00ea-44d3-b9c6-efeb0d2fdf21";
-		fsType = "ext4";
+	boot.initrd.luks.devices = {
+		crypted = {
+			device = "/dev/disk/by-uuid/bf64b2fc-7624-410c-a5a6-207bd2c724da";
+			preLVM = true;
+		};
 	};
 
 	fileSystems."/boot" = {
-		device = "/dev/disk/by-uuid/EA6F-085C";
+		device = "/dev/disk/by-uuid/1032-F454";
 		fsType = "vfat";
 		options = ["fmask=0022" "dmask=0022"];
 	};
 
+	fileSystems."/" = {
+		device = "/dev/mapper/vg-nixos";
+		fsType = "ext4";
+	};
+
 	swapDevices = [
-		{device = "/dev/disk/by-uuid/9877fc6f-5adb-4cc8-bbbf-6ebc3a3b3f0a";}
+		{device = "/dev/mapper/vg-swap";}
 	];
 
 	networking.useDHCP = lib.mkDefault true;

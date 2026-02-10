@@ -1,6 +1,5 @@
 {pkgs, ...}: {
 	home.packages = with pkgs; [
-		bat
 		git
 		gh
 
@@ -26,49 +25,10 @@
 
 		networkmanagerapplet
 
-		cargo
-		rustc
-		rustfmt
-		rust-analyzer
-		clippy
-
-		typescript-language-server
-		vscode-langservers-extracted
-
-		basedpyright
-
-		go
-		gopls
-		python314
-		nodejs_24
-		bun
-
-		lua-language-server
-
-		gcc
-		libgcc
-		gnumake
-		cmake
-		clang-tools
-		libcxx
-		valgrind
-		bear
-
-		SDL2
-
-		docker_28
-
-		jetbrains.idea-ultimate
-		android-studio
-
-		dbeaver-bin
-
 		libreoffice-fresh
 		hunspell
 		hunspellDicts.en_US
 		hunspellDicts.es_ES
-
-		arduino-ide
 
 		fd
 		ripgrep
@@ -76,25 +36,47 @@
 		unzip
 		screen
 		btop
-
-		prismlauncher
-
-		alejandra
-		nixd
-
-		stylua
-
+		bat
 		file
 		parted
 		wget
 
 		vlc
 
-		qt6.qt5compat
-		qt6.qtsvg
-		qt6.qtimageformats
-		qt6.qtmultimedia
-		qt6.qtdeclarative
-		quickshell
+		docker_28
+
+		gcc
+		libgcc
+		gnumake
+		cmake
+		clang-tools
+		libcxx
+		gdb
+		valgrind
+		bear
+
+		cargo
+		rustc
+		rustfmt
+		rust-analyzer
+		clippy
+
+		python314
+		basedpyright
+
+		go
+		gopls
+
+		nodejs_24
+		bun
+		typescript-language-server
+		vscode-langservers-extracted
+
+		alejandra
+		nixd
+		lua-language-server
+		stylua
+
+		SDL2
 	];
 }
