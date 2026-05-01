@@ -4,7 +4,7 @@
 			menuentry "Windows" {
 				insmod part_gpt
 				insmod fat
-				search --no-floppy --fs-uuid --set=root D401-3027
+				search --no-floppy --fs-uuid --set=root 1032-F454
 				chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 			}
 		'';

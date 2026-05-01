@@ -12,6 +12,7 @@
 		./nvim.nix
 		./r.nix
 		./vscode.nix
+		./zed.nix
 		./waybar.nix
 	];
 }

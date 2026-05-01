@@ -3,6 +3,9 @@
 		git
 		gh
 
+		vim
+		neovim
+
 		waybar
 
 		pavucontrol
@@ -11,10 +14,9 @@
 		discord
 		firefox
 		obsidian
-		spotify
 
 		inotify-tools
-		neofetch
+		fastfetch
 
 		grim
 		slurp

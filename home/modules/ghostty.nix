@@ -6,7 +6,7 @@
 			window-decoration = false;
 			font-family = "TX02 Nerd Font Mono";
 			font-style = "Bold";
-			theme = "TokyoNight Night";
+			theme = "0x96f";
 			font-size = "14";
 			window-padding-x = "3";
 			window-padding-y = "3";

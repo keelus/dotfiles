@@ -41,7 +41,7 @@
 	users.users.keelus = {
 		isNormalUser = true;
 		description = "keelus";
-		extraGroups = ["networkmanager" "wheel" "docker" "adbusers" "dialout" "vboxusers"];
+		extraGroups = ["networkmanager" "wheel" "docker" "adbusers" "dialout"]; # "vboxusers" ];
 		packages = with pkgs; [];
 	};
 
@@ -108,10 +108,10 @@
 	virtualisation = {
 		docker.enable = true;
 
-		virtualbox.host = {
-			enable = true;
-			enableKvm = false;
-			addNetworkInterface = true;
-		};
+		# virtualbox.host = {
+		# 	enable = true;
+		# 	enableKvm = false;
+		# 	addNetworkInterface = true;
+		# };
 	};
 }

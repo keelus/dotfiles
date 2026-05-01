@@ -36,8 +36,8 @@
 		NIXOS_OZONE_WL = "1";
 	};
 
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-	};
+	# programs.neovim = {
+	# 	enable = true;
+	# 	defaultEditor = true;
+	# };
 }

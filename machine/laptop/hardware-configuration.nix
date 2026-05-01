@@ -9,8 +9,8 @@
 	];
 
 	boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
-	boot.initrd.kernelModules = [ "dm-snapshot" ];
-	boot.kernelModules = ["kvm-intel" "vboxdrv" "vboxnetadp" "vboxnetflt"];
+	boot.initrd.kernelModules = ["dm-snapshot"];
+	boot.kernelModules = ["kvm-intel"]; # "vboxdrv" "vboxnetadp" "vboxnetflt"];
 	boot.extraModulePackages = [];
 
 	boot.initrd.luks.devices.cryptroot = {
