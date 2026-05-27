@@ -15,24 +15,24 @@
 
 	boot.initrd.luks.devices.cryptroot = {
 		name = "cryptroot";
-		device = "/dev/disk/by-uuid/5527258f-a214-42fc-ac29-54bf72f603e5";
+		device = "/dev/disk/by-uuid/348d12f6-f583-462b-b687-dd9246093558";
 		preLVM = true;
 		allowDiscards = true;
 	};
 
 	fileSystems."/" = {
-		device = "/dev/disk/by-uuid/72cfb86d-b9ce-4e11-977f-5810ddc89dba";
+		device = "/dev/mapper/vg-nixos";
 		fsType = "ext4";
 	};
 
 	fileSystems."/boot" = {
-		device = "/dev/disk/by-uuid/51F5-F677";
+		device = "/dev/disk/by-uuid/9FDD-0EC7";
 		fsType = "vfat";
 		options = ["fmask=0077" "dmask=0077"];
 	};
 
 	swapDevices = [
-		{device = "/dev/disk/by-uuid/81c56301-5aad-47b2-9963-0c89174e12aa";}
+		{device = "/dev/mapper/vg-swap";}
 	];
 
 	networking.useDHCP = lib.mkDefault true;

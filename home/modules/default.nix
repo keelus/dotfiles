@@ -8,9 +8,7 @@
 		./gtk.nix
 		./hyprland.nix
 		./hyprpaper.nix
-		./iwd.nix
 		./nvim.nix
-		./r.nix
 		./vscode.nix
 		./zed.nix
 		./waybar.nix
